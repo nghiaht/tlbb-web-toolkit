@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import DashBoardPage from './pages/DashBoardPage';
 import {calculateKimTinhThach} from './utils';
 
 function TinhThongCalculationForm(props) {
@@ -60,13 +60,13 @@ class App extends Component {
         </p>
 
 
-        <TinhThongCalculationForm onChange={this.handleTinhThongFormInputChange}
-                                  currentTinhThongLevel={this.state.currentTinhThongLevel}
-                                  targetTinhThongLevel={this.state.targetTinhThongLevel}>
+        {/*<TinhThongCalculationForm onChange={this.handleTinhThongFormInputChange}*/}
+                                  {/*currentTinhThongLevel={this.state.currentTinhThongLevel}*/}
+                                  {/*targetTinhThongLevel={this.state.targetTinhThongLevel}>*/}
 
-          <br />
-          <label>Số lượng Kim Tinh Thạch cần để thăng cấp: {this.state.calculatedKimTinhThach}</label>
-        </TinhThongCalculationForm>
+          {/*<br />*/}
+          {/*<label>Số lượng Kim Tinh Thạch cần để thăng cấp: {this.state.calculatedKimTinhThach}</label>*/}
+        {/*</TinhThongCalculationForm>*/}
 
 
 

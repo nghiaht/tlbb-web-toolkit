@@ -39,8 +39,10 @@ class NavBar extends React.Component {
               Tiện ích
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <AppDropDownNavLink to="/player">Tính số lượng Kim Tinh Thạch thăng cấp tinh thông trang bị</AppDropDownNavLink>
-              <AppDropDownNavLink to="/logplayer">Tính hiệu quả Chân Nguyên</AppDropDownNavLink>
+              <AppDropDownNavLink to="/#tra-cuu-ten-may-chu-tlbb">Tra cứu tên máy chủ TLBB</AppDropDownNavLink>
+                <AppDropDownNavLink to="/#tool-tinh-kim-tinh-thach-tlbb">Tính số lượng Kim Tinh Thạch thăng cấp tinh thông trang bị</AppDropDownNavLink>
+
+                <AppDropDownNavLink to="/logplayer">Tính hiệu quả Chân Nguyên</AppDropDownNavLink>
             </div>
           </li>
 
