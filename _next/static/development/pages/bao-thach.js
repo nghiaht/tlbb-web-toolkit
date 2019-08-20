@@ -1,4 +1,104 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\tac-gia.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\bao-thach.js"],{
+
+/***/ "./bao-thach.js":
+/*!**********************!*\
+  !*** ./bao-thach.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+var _parseInt2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js"));
+
+var _assign = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js"));
+
+// 1 vien cap 2 = 3 vien cap 1
+// ...
+// 1 vien cap 8 = 2 vien cap 7
+var REFERENCES = {
+  "1": 0,
+  "2": 5,
+  "3": 5,
+  "4": 5,
+  "5": 5,
+  "6": 5,
+  "7": 5,
+  "8": 4
+};
+
+function getLowerLevelQuantity(level, stopLevel, quantity) {
+  if (level == stopLevel || level <= 1) return quantity;else {
+    return getLowerLevelQuantity(level - 1, stopLevel, quantity * REFERENCES[level]);
+  }
+}
+
+var CACHE = {};
+
+function doGetLowerLevelQuantity(level, baseLevel) {
+  var key = "".concat(level, "_").concat(baseLevel);
+  if (CACHE[key]) return CACHE[key];
+  var result = getLowerLevelQuantity(level, baseLevel, 1);
+  CACHE[key] = result;
+  return result;
+}
+
+function guess(_ref) {
+  var q1 = _ref.q1,
+      q2 = _ref.q2,
+      q3 = _ref.q3,
+      q4 = _ref.q4,
+      q5 = _ref.q5,
+      q6 = _ref.q6,
+      q7 = _ref.q7,
+      q8 = _ref.q8,
+      targetLevel = _ref.targetLevel;
+  var data = {
+    "1": q1 || 0,
+    "2": q2 || 0,
+    "3": q3 || 0,
+    "4": q4 || 0,
+    "5": q5 || 0,
+    "6": q6 || 0,
+    "7": q7 || 0,
+    "8": q8 || 0
+  };
+  var result = (0, _assign["default"])({}, data);
+
+  for (var i = 1; i < targetLevel; i++) {
+    var nextLevel = i + 1;
+    var currentLevelQuantity = result[i];
+    var requiredQuantityForANextLevel = doGetLowerLevelQuantity(nextLevel, i);
+    var addedNextLevelQuantity = (0, _parseInt2["default"])(currentLevelQuantity / requiredQuantityForANextLevel);
+    var subtractedCurrentLevelQuantity = addedNextLevelQuantity * requiredQuantityForANextLevel; // console.log(`+ ${addedNextLevelQuantity} Level ${i}`);
+    // Add it
+
+    result[nextLevel] += addedNextLevelQuantity; // Subtract it
+
+    result[i] -= subtractedCurrentLevelQuantity;
+  }
+
+  return result;
+}
+
+if (__webpack_require__.c[__webpack_require__.s] === module) {
+  // console.log(doGetLowerLevelQuantity(5, 2));
+  console.log(guess({
+    q1: 80,
+    q2: 1,
+    targetLevel: 6
+  }));
+}
+
+module.exports = {
+  guess: guess
+};
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
 
 /***/ "./components/prefix-link.js":
 /*!***********************************!*\
@@ -712,6 +812,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "./node_modules/core-js/library/fn/parse-int.js");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/promise.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/promise.js ***!
@@ -978,6 +1089,36 @@ function _createClass(Constructor, protoProps, staticProps) {
   if (protoProps) _defineProperties(Constructor.prototype, protoProps);
   if (staticProps) _defineProperties(Constructor, staticProps);
   return Constructor;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
 }
 
 /***/ }),
@@ -1531,6 +1672,19 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 __webpack_require__(/*! ../../modules/es6.object.set-prototype-of */ "./node_modules/core-js/library/modules/es6.object.set-prototype-of.js");
 module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.setPrototypeOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/parse-int.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/library/fn/parse-int.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../modules/es6.parse-int */ "./node_modules/core-js/library/modules/es6.parse-int.js");
+module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/core-js/library/modules/_core.js").parseInt;
 
 
 /***/ }),
@@ -3328,6 +3482,26 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/_parse-int.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_parse-int.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $parseInt = __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js").parseInt;
+var $trim = __webpack_require__(/*! ./_string-trim */ "./node_modules/core-js/library/modules/_string-trim.js").trim;
+var ws = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
+var hex = /^[-+]?0[xX]/;
+
+module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix) {
+  var string = $trim(String(str), 3);
+  return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
+} : $parseInt;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/_perform.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_perform.js ***!
@@ -3645,6 +3819,60 @@ module.exports = function (TO_STRING) {
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-trim.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-trim.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var defined = __webpack_require__(/*! ./_defined */ "./node_modules/core-js/library/modules/_defined.js");
+var fails = __webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js");
+var spaces = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
+var space = '[' + spaces + ']';
+var non = '\u200b\u0085';
+var ltrim = RegExp('^' + space + space + '*');
+var rtrim = RegExp(space + space + '*$');
+
+var exporter = function (KEY, exec, ALIAS) {
+  var exp = {};
+  var FORCE = fails(function () {
+    return !!spaces[KEY]() || non[KEY]() != non;
+  });
+  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
+  if (ALIAS) exp[ALIAS] = fn;
+  $export($export.P + $export.F * FORCE, 'String', exp);
+};
+
+// 1 -> String#trimLeft
+// 2 -> String#trimRight
+// 3 -> String#trim
+var trim = exporter.trim = function (string, TYPE) {
+  string = String(defined(string));
+  if (TYPE & 1) string = string.replace(ltrim, '');
+  if (TYPE & 2) string = string.replace(rtrim, '');
+  return string;
+};
+
+module.exports = exporter;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-ws.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-ws.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
+  '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 
 /***/ }),
@@ -4276,6 +4504,21 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(/*! ./_set-pr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es6.parse-int.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es6.parse-int.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var $parseInt = __webpack_require__(/*! ./_parse-int */ "./node_modules/core-js/library/modules/_parse-int.js");
+// 18.2.5 parseInt(string, radix)
+$export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
 
 /***/ }),
@@ -6909,21 +7152,21 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftac-gia&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Ctac-gia.js!./":
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftac-gia&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Ctac-gia.js ***!
-  \**********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fbao-thach&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Cbao-thach.js!./":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fbao-thach&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Cbao-thach.js ***!
+  \**************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/tac-gia", function() {
-      var page = __webpack_require__(/*! ./pages/tac-gia.js */ "./pages/tac-gia.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/bao-thach", function() {
+      var page = __webpack_require__(/*! ./pages/bao-thach.js */ "./pages/bao-thach.js")
       if(true) {
-        module.hot.accept(/*! ./pages/tac-gia.js */ "./pages/tac-gia.js", function() {
-          if(!next.router.components["/tac-gia"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/tac-gia.js */ "./pages/tac-gia.js")
-          next.router.update("/tac-gia", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/bao-thach.js */ "./pages/bao-thach.js", function() {
+          if(!next.router.components["/bao-thach"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/bao-thach.js */ "./pages/bao-thach.js")
+          next.router.update("/bao-thach", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -11230,149 +11473,569 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/tac-gia.js":
-/*!**************************!*\
-  !*** ./pages/tac-gia.js ***!
-  \**************************/
+/***/ "./pages/bao-thach.js":
+/*!****************************!*\
+  !*** ./pages/bao-thach.js ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TacGia; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _layouts_MainLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layouts/MainLayout */ "./layouts/MainLayout.js");
-var _jsxFileName = "C:\\Users\\Nghia\\Workspace\\tlbb-tool\\source\\pages\\tac-gia.js";
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _layouts_MainLayout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../layouts/MainLayout */ "./layouts/MainLayout.js");
+/* harmony import */ var _bao_thach__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../bao-thach */ "./bao-thach.js");
+/* harmony import */ var _bao_thach__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_bao_thach__WEBPACK_IMPORTED_MODULE_11__);
 
 
-function TacGia() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_MainLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }, "Th\xF4ng tin t\xE1c gi\u1EA3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
-  }, "LingYun kh\u1EDFi \u0111\u1EA7u game TLBB \u1EDF m\xE1y ch\u1EE7 B\xE1t Qu\xE1i Ch\u01B0\u1EDFng (nh\xE2n v\u1EADt 4x) - \u1EDF c\xE1i th\u1EDDi m\xE0 VLTK, VLTK2, Phong Th\u1EA7n, C\u1EEDu Long Tranh B\xE1 c\xF2n r\u1EA7n r\u1EA7n. Tuy nhi\xEAn anh \u1EA5y kh\xF4ng c\xF3 nhi\u1EC1u th\u1EDDi gian, m\u1EB7c d\xF9 v\u1EDBi \"kinh nghi\u1EC7m\" ch\u01A1i qua c\xE1c t\u1EF1a game MMO, anh \u1EA5y v\u1EABn nh\u1EDB TLBB l\xE0 t\u1EF1a game hay h\u01A1n c\u1EA3. V\u1EC1 sau anh \u1EA5y c\u0169ng ch\u01A1i l\u1EA1i (l\u1EA1i m\u1ED9t nh\xE2n v\u1EADt 4x) \u1EDF Ch\xEDnh Kh\xED H\u1EA1o Nhi\xEAn nh\u01B0ng sau \u0111\xF3 c\u0169ng b\u1ECF ngang. Sau n\xE0y th\xEAm n\u1EEFa, anh l\u1EA1i ch\u01A1i ti\u1EBFp m\u1ED9t nh\xE2n v\u1EADt 4x \u1EDF C\u1EEDu D\u01B0\u01A1ng Th\u1EA7n C\xF4ng, tham gia nh\u1EAFn tin SMS nh\u1EADn code Thi\xEAn Long Kim T\xF4n, acc c\xF3 \u0111i\u1EC3m t\u1EB7ng, qu\xE0 t\u1EB7ng B\xED Ng\xE2n, V\u1EA3i B\xF4ng. Nh\u01B0ng sau \u0111\xF3 c\u0169ng b\u1ECF ngang."), "M\xE3i \u0111\u1EBFn v\xE0i n\u0103m sau, c\xF3 th\u1EDDi gian ch\u0103m ch\xFAt h\u01A1n, v\xE0 nh\u1EDB v\u1EC1 ni\u1EC1m \u0111am m\xEA c\u1EE7a m\xECnh v\u1EDBi TLBB ng\xE0y x\u01B0a, anh \u1EA5y c\u1ED1 g\u1EAFng t\xECm v\xE0 quay l\u1EA1i nh\xE2n v\u1EADt 4x c\u0169 \u1EDF C\u1EEDu D\u01B0\u01A1ng Th\u1EA7n C\xF4ng v\u1EDBi t\xEAn nh\xE2n v\u1EADt \u0111\xE3 \u0111\u01B0\u1EE3c \u0111\u1EB7t t\u1EEB l\xE2u: LingYun. Th\u1EDDi gian m\u1EDBi ch\u01A1i l\u1EA1i n\xE0y c\u0169ng l\xE0 l\xFAc c\xE1c m\xE1y ch\u1EE7 c\u0169 kh\xE1 b\xE3o h\xF2a, LingYun t\u1EF1 ch\u01A1i m\u1ED9t m\xECnh, t\u1EF1 luy\u1EC7n c\xF4ng tr\xEAn Y\u1EBFn V\u01B0\u01A1ng C\u1ED5 M\u1ED9, nh\u1EB7t r\u01B0\u01A1ng Hoa S\u01A1n, luy\u1EC7n \u0111an K\xEDnh H\u1ED3, d\u1EA7n d\u1EA7n anh c\u0169ng t\xECm \u0111\u01B0\u1EE3c v\xE0i ng\u01B0\u1EDDi ti\u1EC1n b\u1ED1i \u0111\u1EC3 gi\xFAp \u0111\u1EE1 tr\xEAn b\u01B0\u1EDBc \u0111\u01B0\u1EDDng tu t\u1EADp.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, "LingYun hay theo d\xF5i c\xE1c video PK c\u1EE7a boyvip5 (Chu Ti\u1EC3u Long), iGoogle, Phi\xEAu Phong, ng\u01B0\u1EE1ng m\u1ED9 h\u1ECD v\xE0 th\u1EA7m mong m\u1ED9t ng\xE0y n\xE0o \u0111\xF3 m\xECnh c\u0169ng t\xECm \u0111\u01B0\u1EE3c ch\u1ED7 \u0111\u1EE9ng c\u1EE7a ri\xEAng m\xECnh tr\xEAn gi\u1EDBi giang h\u1ED3. T\u1EEB nh\u1EEFng th\xE1ng ng\xE0y \u0111i ph\u1EE5 b\u1EA3n nh\u1EB7t ng\u1ECDc 1 h\u1EE3p th\xE0nh 4 v\u1EDBi m\u1EE5c ti\xEAu acc full ng\u1ECDc 4, LingYun c\u0169ng kh\xE1 t\u1EF1 h\xE0o v\u1EC1 s\u1EF1 c\u1ED1 g\u1EAFng c\u1EE7a m\xECnh, nh\u01B0ng anh bi\u1EBFt m\u1ED9t th\u1EF1c t\u1EBF \"kh\xF4ng b\u1ECF ti\u1EC1n, th\xEC c\u0169ng b\u1ECF c\xF4ng\", v\xE0 v\u1EC1 sau n\xE0y LingYun ch\u1ECBu kh\xF3 \u0111\u1EA7u t\u01B0 h\u01A1n, v\xEC v\u1ED1n d\u0129 anh r\u1EA5t t\xE2m huy\u1EBFt, vui kh\u1ED5 c\xF9ng acc, t\u1EF1 b\u1ECF ti\u1EC1n ngu ra \u0111\u1EC3 tr\u1EA3i nghi\u1EC7m v\xE0 l\xE0m acc cho ch\xEDnh m\xECnh."), "N\u0103m 2015 anh ch\u1EA5p b\xFAt chuy\xEAn trang Thi\xEAn Long B\xE1t B\u1ED9 C\u1EA9m Nang T\u1EA1p L\u1EE5c (tlbb.readthedocs.io) nh\u1EB1m ghi ch\xE9p nh\u1EEFng kinh nghi\u1EC7m, ki\u1EBFn th\u1EE9c, hi\u1EC3u bi\u1EBFt c\u1EE7a ri\xEAng m\xECnh v\u1EC1 c\xE1c kh\xEDa c\u1EA1nh c\u1EE7a TLBB, v\u1EDBi nguy\u1EC7n v\u1ECDng gi\xFAp cho m\xECnh (th\u1ECFa \u0111am m\xEA), gi\xFAp cho \u0111\u1EDDi, gi\xFAp cho \u0111\u1ED3ng \u0111\u1EA1o v\xF5 l\xE2m g\u1EA7n xa.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
-  }, "K\xEAnh Youtube click2teen c\u1EE7a LingYun c\u0169ng d\u1EA7n d\u1EA7n \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBFn h\u01A1n, kh\u1EDFi \u0111\u1EA7u l\xE0 nh\u1EEFng tr\u1EADn l\xF4i \u0111\xE0i c\xF2n non n\u1EDBt, nh\u01B0ng LingYun c\u0169ng c\u1ED1 g\u1EAFng \u0111\u0103ng t\u1EA3i \u0111\u1EC3 cho m\u1ECDi ng\u01B0\u1EDDi th\u1EA5y (ch\xEA c\u01B0\u1EDDi), v\xEC anh bi\u1EBFt kh\xF4ng c\xF3 g\xEC l\xE0 ho\xE0n h\u1EA3o c\u1EA3, c\xE1i c\u1ED1t l\xE0 bi\u1EBFt nh\xECn nh\u1EADn, chia s\u1EBB, h\u1ECDc h\u1ECFi, ti\u1EBFp thu. L\u1ED1i \u0111\xE1nh c\u1EE7a LingYun kh\xF4ng hoa m\u0129 nh\u01B0 c\xE1c v\u1ECB ti\u1EC1n b\u1ED1i, m\xE0 ch\u1EC9 c\xF3 4 ch\u1EEF \"t\xF9y c\u01A1 \u1EE9ng bi\u1EBFn\", pha ch\xFAt ng\u1EABu h\u1EE9ng ch\u1EE9 kh\xF4ng b\xE0i v\u1EDF, ch\u1EB7t ch\u1EBD v\xE0 chu to\xE0n \u0111\u01B0\u1EE3c, v\xEC \u0111\u01A1n gi\u1EA3n LingYun c\u0169ng l\xE0 m\u1ED9t k\u1EBB ph\xE0m phu t\u1EE5c t\u1EED, v\u1ED1n th\xEDch nh\u1EEFng \u0111i\u1EC1u gi\u1EA3n d\u1ECB v\xE0 t\u1EF1 nhi\xEAn. B\xEAn c\u1EA1nh \u0111\xF3, anh c\xF2n ph\xE1t bi\u1EC3u \xFD ki\u1EBFn, chia s\u1EBB, ph\xE2n t\xEDch v\u1EC1 c\xE1ch t\u1EF1 x\u1EED c\xE1c ph\u1EE5 b\u1EA3n, ho\u1EA1t \u0111\u1ED9ng, ch\u1EE9c n\u0103ng in-game.")), "H\xF4m nay, LingYun t\xE1i b\xFAt v\xE0o ng\xE0y 11/2/2018 - nh\xE2n d\u1ECBp anh \u0111\u0103ng t\u1EA3i b\u1ED9 web toolkit v\u1EDBi m\u1ED9t s\u1ED1 ti\u1EC7n t\xEDch li\xEAn quan \u0111\u1EBFn game TLBB m\xE0 anh h\u1EB1ng \u0111am m\xEA.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://youtube.com/click2teen",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: this
-  }, "YouTube - click2teen")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://facebook.com/chiase.tlbb",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: this
-  }, "Fanpage Thi\xEAn Long B\xE1t B\u1ED9 C\u1EA9m Nang T\u1EA1p L\u1EE5c")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://tlbb.github.io",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: this
-  }, "Thi\xEAn Long B\xE1t B\u1ED9 C\u1EA9m Nang T\u1EA1p L\u1EE5c - Quy\u1EC3n Th\u01B0\u1EE3ng")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 71
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://tlbb.readthedocs.io",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 72
-    },
-    __self: this
-  }, "Thi\xEAn Long B\xE1t B\u1ED9 C\u1EA9m Nang T\u1EA1p L\u1EE5c - Quy\u1EC3n H\u1EA1")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 77
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://nghiaht.github.io/tlbb-web-toolkit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: this
-  }, "TLBB Free Tools - Top c\xF4ng c\u1EE5 h\u1ED7 tr\u1EE3 l\xE0m acc TLBB"))));
-}
+
+
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\Nghia\\Workspace\\tlbb-tool\\source\\pages\\bao-thach.js";
+
+
+
+
+var NHTPage =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__["default"])(NHTPage, _React$Component);
+
+  function NHTPage(props) {
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, NHTPage);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(NHTPage).call(this, props));
+    _this.state = {
+      q1: 0,
+      q2: 0,
+      q3: 0,
+      q4: 0,
+      q5: 0,
+      q6: 0,
+      q7: 0,
+      q8: 0,
+      busy: false,
+      result: null
+    };
+    _this.handleInputChange = _this.handleInputChange.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this));
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(NHTPage, [{
+    key: "handleInputChange",
+    value: function handleInputChange(event) {
+      var target = event.target;
+      var value = target.type === "checkbox" ? target.checked : target.value;
+      var name = target.name;
+      this.setState(Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, name, value));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      this.setState({
+        busy: true
+      });
+      var result = {};
+
+      for (var i = 1; i <= 8; i++) {
+        var t = Object(_bao_thach__WEBPACK_IMPORTED_MODULE_11__["guess"])({
+          q1: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(this.state.q1) || 0,
+          q2: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(this.state.q2) || 0,
+          q3: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(this.state.q3) || 0,
+          q4: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(this.state.q4) || 0,
+          q5: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(this.state.q5) || 0,
+          q6: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(this.state.q6) || 0,
+          q7: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(this.state.q7) || 0,
+          q8: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(this.state.q8) || 0,
+          targetLevel: i
+        });
+        if (t[i]) result[i] = t;
+      }
+
+      this.setState({
+        result: result,
+        busy: false
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          q1 = _this$state.q1,
+          q2 = _this$state.q2,
+          q3 = _this$state.q3,
+          q4 = _this$state.q4,
+          q5 = _this$state.q5,
+          q6 = _this$state.q6,
+          q7 = _this$state.q7,
+          q8 = _this$state.q8,
+          busy = _this$state.busy,
+          result = _this$state.result;
+      3;
+      var results = result ? _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(result).map(function (level) {
+        var resultByLevel = result[level];
+        return _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(resultByLevel).filter(function (nestedLevel) {
+          return resultByLevel[nestedLevel] > 0;
+        }).map(function (nestedLevel) {
+          return "".concat(resultByLevel[nestedLevel], " C").concat(nestedLevel);
+        }).join(", ");
+      }) : null;
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_layouts_MainLayout__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        },
+        __self: this
+      }, "B\xE0n t\xEDnh B\u1EA3o Th\u1EA1ch"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("ul", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 85
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86
+        },
+        __self: this
+      }, "1 C2 = 5 C1"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }, "1 C3 = 5 C2"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
+        },
+        __self: this
+      }, "1 C4 = 5 C3"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 89
+        },
+        __self: this
+      }, "1 C5 = 5 C4"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90
+        },
+        __self: this
+      }, "1 C6 = 5 C5"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
+        },
+        __self: this
+      }, "1 C7 = 5 C6"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        },
+        __self: this
+      }, "1 C8 = 4 C7")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "form-row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "col-12 col-md",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        htmlFor: "q1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }, "C1"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        name: "q1",
+        type: "number",
+        placeholder: "C1",
+        className: "form-control",
+        onChange: this.handleInputChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "col-12 col-md",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        htmlFor: "q2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108
+        },
+        __self: this
+      }, "C2"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        name: "q2",
+        type: "number",
+        placeholder: "C2",
+        className: "form-control",
+        onChange: this.handleInputChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "col-12 col-md",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        htmlFor: "q3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 119
+        },
+        __self: this
+      }, "C3"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        name: "q3",
+        type: "number",
+        placeholder: "C3",
+        className: "form-control",
+        onChange: this.handleInputChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 120
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "col-12 col-md",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        htmlFor: "q4",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 130
+        },
+        __self: this
+      }, "C4"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        name: "q4",
+        type: "number",
+        placeholder: "C4",
+        className: "form-control",
+        onChange: this.handleInputChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 131
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "col-12 col-md",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        htmlFor: "q5",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 141
+        },
+        __self: this
+      }, "C5"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        name: "q5",
+        type: "number",
+        placeholder: "C5",
+        className: "form-control",
+        onChange: this.handleInputChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 142
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "col-12 col-md",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 151
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        htmlFor: "q6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 152
+        },
+        __self: this
+      }, "C6"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        name: "q6",
+        type: "number",
+        placeholder: "C6",
+        className: "form-control",
+        onChange: this.handleInputChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 153
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "col-12 col-md",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 162
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        htmlFor: "q7",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 163
+        },
+        __self: this
+      }, "C7"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        name: "q7",
+        type: "number",
+        placeholder: "C7",
+        className: "form-control",
+        onChange: this.handleInputChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 164
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "col-12 col-md",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 173
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        htmlFor: "q8",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 174
+        },
+        __self: this
+      }, "C8"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        name: "q8",
+        type: "number",
+        placeholder: "C8",
+        className: "form-control",
+        onChange: this.handleInputChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 175
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "mt-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 185
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        type: "submit",
+        value: "Submit",
+        className: "btn btn-success",
+        disabled: busy,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 186
+        },
+        __self: this
+      }))), result && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("table", {
+        className: "mt-4 table table-bordered table-striped",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 196
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("thead", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 197
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 198
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199
+        },
+        __self: this
+      }, "C\u1EA5p m\u1EE5c ti\xEAu\\S\u1ED1 l\u01B0\u1EE3ng \u0111\u1EA7u cu\u1ED1i"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 200
+        },
+        __self: this
+      }, "1"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 201
+        },
+        __self: this
+      }, "2"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 202
+        },
+        __self: this
+      }, "3"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 203
+        },
+        __self: this
+      }, "4"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 204
+        },
+        __self: this
+      }, "5"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 205
+        },
+        __self: this
+      }, "6"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 206
+        },
+        __self: this
+      }, "7"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 207
+        },
+        __self: this
+      }, "8"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("tbody", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 211
+        },
+        __self: this
+      }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(result).map(function (targetLevel) {
+        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("tr", {
+          key: "tl".concat(targetLevel),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 213
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", {
+          className: "font-weight-bold",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 214
+          },
+          __self: this
+        }, targetLevel), _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(result[targetLevel]).map(function (nestedLevel) {
+          return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", {
+            key: "tl-".concat(targetLevel, "-").concat(nestedLevel),
+            className: result[targetLevel][nestedLevel] ? "font-weight-bold" : "",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 216
+            },
+            __self: this
+          }, result[targetLevel][nestedLevel]);
+        }));
+      }))), results && results.length > 0 && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 234
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("ul", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 235
+        },
+        __self: this
+      }, results.map(function (line, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+          key: idx,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 237
+          },
+          __self: this
+        }, line);
+      }))));
+    }
+  }]);
+
+  return NHTPage;
+}(react__WEBPACK_IMPORTED_MODULE_9___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (NHTPage);
 
 /***/ }),
 
-/***/ 0:
-/*!**************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Ftac-gia&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Ctac-gia.js ***!
-  \**************************************************************************************************************************************************/
+/***/ 2:
+/*!******************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fbao-thach&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Cbao-thach.js ***!
+  \******************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Ftac-gia&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Ctac-gia.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftac-gia&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Ctac-gia.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fbao-thach&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Cbao-thach.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fbao-thach&absolutePagePath=C%3A%5CUsers%5CNghia%5CWorkspace%5Ctlbb-tool%5Csource%5Cpages%5Cbao-thach.js!./");
 
 
 /***/ }),
@@ -11388,5 +12051,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=tac-gia.js.map
+},[[2,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=bao-thach.js.map
