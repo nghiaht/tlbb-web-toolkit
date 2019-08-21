@@ -113,10 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _next_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../next.config */ "./next.config.js");
-/* harmony import */ var _next_config__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_next_config__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\Users\\Nghia\\Workspace\\tlbb-tool\\source\\components\\prefix-link.js";
-
 
 
 
@@ -127,7 +124,7 @@ var PrefixedLink = function PrefixedLink(_ref) {
       children = _ref.children;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
     href: href,
-    as: "".concat(_next_config__WEBPACK_IMPORTED_MODULE_2__["assetPrefix"]).concat(as),
+    as: "".concat("").concat(as),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
@@ -207,6 +204,8 @@ function AppLink(_ref) {
   }, children)));
 }
 
+var STATIC_ROOT =  false ? undefined : "/static";
+
 var MainLayout =
 /*#__PURE__*/
 function (_React$Component) {
@@ -246,148 +245,148 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 49
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_6___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 50
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("title", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 51
         },
         __self: this
       }, "TLBB Free Tools by LingYun"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "apple-touch-icon",
         sizes: "57x57",
-        href: "/static/apple-icon-57x57.png",
+        href: STATIC_ROOT + "/apple-icon-57x57.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 53
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "apple-touch-icon",
         sizes: "60x60",
-        href: "/static/apple-icon-60x60.png",
+        href: STATIC_ROOT + "/apple-icon-60x60.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 58
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "apple-touch-icon",
         sizes: "72x72",
-        href: "/static/apple-icon-72x72.png",
+        href: STATIC_ROOT + "/apple-icon-72x72.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 63
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "apple-touch-icon",
         sizes: "76x76",
-        href: "/static/apple-icon-76x76.png",
+        href: STATIC_ROOT + "/apple-icon-76x76.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 68
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "apple-touch-icon",
         sizes: "114x114",
-        href: "/static/apple-icon-114x114.png",
+        href: STATIC_ROOT + "/apple-icon-114x114.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 73
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "apple-touch-icon",
         sizes: "120x120",
-        href: "/static/apple-icon-120x120.png",
+        href: STATIC_ROOT + "/apple-icon-120x120.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 78
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "apple-touch-icon",
         sizes: "144x144",
-        href: "/static/apple-icon-144x144.png",
+        href: STATIC_ROOT + "/apple-icon-144x144.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 83
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "apple-touch-icon",
         sizes: "152x152",
-        href: "/static/apple-icon-152x152.png",
+        href: STATIC_ROOT + "/apple-icon-152x152.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 88
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "apple-touch-icon",
         sizes: "180x180",
-        href: "/static/apple-icon-180x180.png",
+        href: STATIC_ROOT + "/apple-icon-180x180.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 93
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "icon",
         type: "image/png",
         sizes: "192x192",
-        href: "/static/android-icon-192x192.png",
+        href: STATIC_ROOT + "/android-icon-192x192.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 98
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        href: "/static/favicon-32x32.png",
+        href: STATIC_ROOT + "/favicon-32x32.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 104
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "icon",
         type: "image/png",
         sizes: "96x96",
-        href: "/static/favicon-96x96.png",
+        href: STATIC_ROOT + "/favicon-96x96.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 110
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        href: "/static/favicon-16x16.png",
+        href: STATIC_ROOT + "/favicon-16x16.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 116
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "manifest",
-        href: "/static/manifest.json",
+        href: STATIC_ROOT + "/manifest.json",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 122
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
@@ -395,7 +394,7 @@ function (_React$Component) {
         content: "#ffffff",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 123
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
@@ -403,7 +402,7 @@ function (_React$Component) {
         content: "/ms-icon-144x144.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 124
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
@@ -411,7 +410,7 @@ function (_React$Component) {
         content: "#ffffff",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 125
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
@@ -421,13 +420,13 @@ function (_React$Component) {
         crossOrigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 127
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("header", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 135
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("nav", {
@@ -437,21 +436,21 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 136
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_prefix_link__WEBPACK_IMPORTED_MODULE_10__["default"], {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 140
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
         className: "navbar-brand",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 141
         },
         __self: this
       }, "TLBB Tools")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
@@ -464,14 +463,14 @@ function (_React$Component) {
         "aria-label": "Toggle navigation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 143
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
         className: "navbar-toggler-icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150
+          lineNumber: 152
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -479,49 +478,49 @@ function (_React$Component) {
         id: "navbarSupportedContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152
+          lineNumber: 154
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
         className: "navbar-nav mr-auto",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156
+          lineNumber: 158
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AppLink, {
         href: "/bao-thach",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157
+          lineNumber: 159
         },
         __self: this
       }, "B\u1EA3o Th\u1EA1ch"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AppLink, {
         href: "/nhuan-hon-thach",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158
+          lineNumber: 160
         },
         __self: this
       }, "Nhu\u1EADn H\u1ED3n Th\u1EA1ch"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AppLink, {
         href: "/game-server",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 161
+          lineNumber: 163
         },
         __self: this
       }, "Tra c\u1EE9u t\xEAn server"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AppLink, {
         href: "/tac-gia",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 162
+          lineNumber: 164
         },
         __self: this
       }, "T\xE1c gi\u1EA3"))))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("main", {
         className: "container-fluid mt-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168
+          lineNumber: 170
         },
         __self: this
       }, this.props.children), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("footer", {
@@ -530,14 +529,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 172
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("nav", {
         className: "navbar fixed-bottom navbar-light bg-light",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 171
+          lineNumber: 173
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
@@ -545,14 +544,14 @@ function (_React$Component) {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 174
         },
         __self: this
       }, "TLBB Tools by LingYun"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         id: "fb-root",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 180
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -564,7 +563,7 @@ function (_React$Component) {
         logged_out_greeting: "T\u1EA1i h\u1EA1 c\xF3 th\u1EC3 gi\xFAp \u0111\u01B0\u1EE3c g\xEC ch\u0103ng?",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 181
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("script", {
@@ -573,7 +572,7 @@ function (_React$Component) {
         crossOrigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 190
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("script", {
@@ -582,7 +581,7 @@ function (_React$Component) {
         crossOrigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193
+          lineNumber: 195
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("script", {
@@ -591,7 +590,7 @@ function (_React$Component) {
         crossOrigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198
+          lineNumber: 200
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("script", {
@@ -600,7 +599,7 @@ function (_React$Component) {
         src: "https://connect.facebook.net/vi_VN/sdk.js",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 204
+          lineNumber: 206
         },
         __self: this
       }));
@@ -631,8 +630,12 @@ var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js"));
 
 // next.config.js
+var isProd = "development" === 'production';
 module.exports = {
-  assetPrefix:  false ? undefined : "",
+  env: {
+    HOMEPAGE: isProd ? "/tlbb-web-toolkit" : ""
+  },
+  assetPrefix: isProd ? "/tlbb-web-toolkit" : "",
   exportTrailingSlash: true,
   exportPathMap: function () {
     var _exportPathMap = (0, _asyncToGenerator2["default"])(
@@ -11603,89 +11606,59 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_layouts_MainLayout__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 80
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h2", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 81
         },
         __self: this
       }, "B\xE0n t\xEDnh B\u1EA3o Th\u1EA1ch"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 83
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 84
         },
         __self: this
-      }, "1 C2 = 5 C1"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+      }, "Nh\u1EADp s\u1ED1 l\u01B0\u1EE3ng b\u1EA3o th\u1EA1ch theo c\u1EA5p m\xE0 b\u1EA1n chu\u1EA9n b\u1ECB."), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 85
         },
         __self: this
-      }, "1 C3 = 5 C2"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 88
-        },
-        __self: this
-      }, "1 C4 = 5 C3"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 89
-        },
-        __self: this
-      }, "1 C5 = 5 C4"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 90
-        },
-        __self: this
-      }, "1 C6 = 5 C5"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 91
-        },
-        __self: this
-      }, "1 C7 = 5 C6"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 92
-        },
-        __self: this
-      }, "1 C8 = 4 C7")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("form", {
+      }, "Tool s\u1EBD t\xEDnh s\u1ED1 ng\u1ECDc t\u1ED1i \u0111a theo c\u1EA5p c\xF3 th\u1EC3 \u0111\u1EA1t \u0111\u01B0\u1EE3c.")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 88
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         className: "form-row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 89
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         className: "col-12 col-md",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 90
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         htmlFor: "q1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 91
         },
         __self: this
       }, "C1"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -11694,23 +11667,24 @@ function (_React$Component) {
         placeholder: "C1",
         className: "form-control",
         onChange: this.handleInputChange,
+        value: this.state.q1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 92
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         className: "col-12 col-md",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 102
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         htmlFor: "q2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 103
         },
         __self: this
       }, "C2"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -11719,23 +11693,24 @@ function (_React$Component) {
         placeholder: "C2",
         className: "form-control",
         onChange: this.handleInputChange,
+        value: this.state.q2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 104
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         className: "col-12 col-md",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 114
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         htmlFor: "q3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119
+          lineNumber: 115
         },
         __self: this
       }, "C3"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -11744,23 +11719,24 @@ function (_React$Component) {
         placeholder: "C3",
         className: "form-control",
         onChange: this.handleInputChange,
+        value: this.state.q3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 116
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         className: "col-12 col-md",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 126
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         htmlFor: "q4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 127
         },
         __self: this
       }, "C4"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -11769,23 +11745,24 @@ function (_React$Component) {
         placeholder: "C4",
         className: "form-control",
         onChange: this.handleInputChange,
+        value: this.state.q4,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 128
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         className: "col-12 col-md",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 138
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         htmlFor: "q5",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 139
         },
         __self: this
       }, "C5"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -11794,23 +11771,24 @@ function (_React$Component) {
         placeholder: "C5",
         className: "form-control",
         onChange: this.handleInputChange,
+        value: this.state.q5,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 140
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         className: "col-12 col-md",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 150
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         htmlFor: "q6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152
+          lineNumber: 151
         },
         __self: this
       }, "C6"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -11819,9 +11797,10 @@ function (_React$Component) {
         placeholder: "C6",
         className: "form-control",
         onChange: this.handleInputChange,
+        value: this.state.q6,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153
+          lineNumber: 152
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
@@ -11844,6 +11823,7 @@ function (_React$Component) {
         placeholder: "C7",
         className: "form-control",
         onChange: this.handleInputChange,
+        value: this.state.q7,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 164
@@ -11853,14 +11833,14 @@ function (_React$Component) {
         className: "col-12 col-md",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 174
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         htmlFor: "q8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 175
         },
         __self: this
       }, "C8"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -11869,16 +11849,17 @@ function (_React$Component) {
         placeholder: "C8",
         className: "form-control",
         onChange: this.handleInputChange,
+        value: this.state.q8,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 176
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         className: "mt-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 187
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -11888,86 +11869,86 @@ function (_React$Component) {
         disabled: busy,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 188
         },
         __self: this
       }))), result && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("table", {
         className: "mt-4 table table-bordered table-striped",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 196
+          lineNumber: 198
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("thead", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 199
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("tr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198
+          lineNumber: 200
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199
+          lineNumber: 201
         },
         __self: this
       }, "C\u1EA5p m\u1EE5c ti\xEAu\\S\u1ED1 l\u01B0\u1EE3ng \u0111\u1EA7u cu\u1ED1i"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200
+          lineNumber: 202
         },
         __self: this
       }, "1"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201
+          lineNumber: 203
         },
         __self: this
       }, "2"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 202
+          lineNumber: 204
         },
         __self: this
       }, "3"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 203
+          lineNumber: 205
         },
         __self: this
       }, "4"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 204
+          lineNumber: 206
         },
         __self: this
       }, "5"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 205
+          lineNumber: 207
         },
         __self: this
       }, "6"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206
+          lineNumber: 208
         },
         __self: this
       }, "7"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("th", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 207
+          lineNumber: 209
         },
         __self: this
       }, "8"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("tbody", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 211
+          lineNumber: 213
         },
         __self: this
       }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(result).map(function (targetLevel) {
@@ -11975,14 +11956,14 @@ function (_React$Component) {
           key: "tl".concat(targetLevel),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 213
+            lineNumber: 215
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", {
           className: "font-weight-bold",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 214
+            lineNumber: 216
           },
           __self: this
         }, targetLevel), _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(result[targetLevel]).map(function (nestedLevel) {
@@ -11991,7 +11972,7 @@ function (_React$Component) {
             className: result[targetLevel][nestedLevel] ? "font-weight-bold" : "",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 216
+              lineNumber: 218
             },
             __self: this
           }, result[targetLevel][nestedLevel]);
@@ -11999,13 +11980,13 @@ function (_React$Component) {
       }))), results && results.length > 0 && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 236
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 237
         },
         __self: this
       }, results.map(function (line, idx) {
@@ -12013,11 +11994,71 @@ function (_React$Component) {
           key: idx,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 237
+            lineNumber: 239
           },
           __self: this
         }, line);
-      }))));
+      }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("hr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 245
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 247
+        },
+        __self: this
+      }, "Th\xF4ng tin c\u01A1 b\u1EA3n"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("ul", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 248
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 249
+        },
+        __self: this
+      }, "1 C2 = 5 C1"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 250
+        },
+        __self: this
+      }, "1 C3 = 5 C2"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 251
+        },
+        __self: this
+      }, "1 C4 = 5 C3"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 252
+        },
+        __self: this
+      }, "1 C5 = 5 C4"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 253
+        },
+        __self: this
+      }, "1 C6 = 5 C5"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 254
+        },
+        __self: this
+      }, "1 C7 = 5 C6"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 255
+        },
+        __self: this
+      }, "1 C8 = 4 C7")));
     }
   }]);
 
